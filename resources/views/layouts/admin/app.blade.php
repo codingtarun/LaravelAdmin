@@ -1,31 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <x-admin.head />
-    <body class="hold-transition sidebar-mini layout-fixed">
-        <div class="wrapper">
-            <!-- Preloader -->
-            <x-admin.loader />
-
-            <!-- Navbar -->
+    <body>
+        <div id="app">
             <x-admin.navbar />
-            <!-- /.navbar -->
 
-            <!-- Main Sidebar Container -->
-            <x-admin.aside />
-
-            <!-- Content Wrapper. Contains page content -->
-            <x-admin.content />
-            <!-- /.content-wrapper -->
-            <x-admin.footer />
-
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
+            <main class="py-4">@yield('content')</main>
         </div>
-        <!-- ./wrapper -->
-
-        <x-admin.footer-script />
+        <!--jQuery CDN-->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
